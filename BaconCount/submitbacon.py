@@ -91,7 +91,9 @@ batch_jobs.setConcurrentInputFileUploadThreads(5)    # Set the number of concurr
 batch_jobs.setConcurrentJobCreationThreads(5)        # Set the number of concurrent jobs
 batch_jobs.setDefaultNoCpus(1);                      # Set the number of CPUs required
 batch_jobs.setDefaultWalltimeInSeconds(300);         # Set the maximum walltime to 5 minutes
-batch_jobs.setLocationsToExclude(["AUT"])            # Create a blacklist of sites to exclude
+exclude_sites = list()
+exclude_sites.append("AUT")
+batch_jobs.setLocationsToExclude(exclude_sites)            # Create a blacklist of sites to exclude
 # Currently the AUT location is not behaving, so always exclude it
 
 print "INFO: Adding common files to Batch Job Object " + batch_job_name
